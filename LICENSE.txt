@@ -1,0 +1,80 @@
+YKS ANALIZ TAKIP SISTEMI - LISANS VE VERI ISLEME SOZLESMESI
+
+Tum Haklari Saklidir - 2025 Berat Cankir
+
+Bu yazilim ve iliskili belgeler (bundan boyle "Yazilim" olarak anilacaktir) Berat Cankir tarafindan gelistirilmistir.
+Yazilim uzerindeki tum haklar saklidir. Yazilimin;
+
+Indirilmesi,
+Kopyalanmasi,
+Degistirilmesi,
+Dagitilmasi,
+Ticari veya ticari olmayan amaclarla kullanilmasi,
+Internette veya baska platformlarda yayimlanmasi
+
+kesinlikle yasaktir.
+Yazilim yalnizca orijinal yazari olan Berat Cankir tarafindan kullanilabilir.
+Baska kisi veya kurumlarin kullanimi acikca yasaktir.
+
+ONEMLI KOSULLAR
+
+Bu yazilimi yukleyerek ve kullanarak yukaridaki tum sartlari okudugunuzu, anladinizi ve kabul ettiginizi beyan etmis sayilirsiniz.
+Yazilimin izinsiz kullanimi, kopyalanmasi veya dagitilmasi durumunda, telif haklari ve ilgili yasalar cercevesinde gerekli tum yasal islemler baslatilacaktir.
+Yazilim "OLDUGU GIBI" saglanmaktadir. Yazilimin kullaniminden dogabilecek her turlu sorumluluk kullaniciya aittir.
+Berat Cankir, yazilimda herhangi bir zamanda degisiklik yapma hakkini sakli tutar.
+
+VERI ISLEME VE GIZLILIK AYDINLATMASI
+
+Veri Sorumlusu: Berat Cankir
+Iletisim: beratkaccow03@gmail.com
+
+Bu yazilim yalnizca gelistiricisi Berat Cankir tarafindan kullanilmak uzere tasarlanmistir.
+Uygulama, yalnizca ek guvenlik onlemleri almak ve olasi lisans/telif ihlallerini tespit etmek amaciyla sinirli teknik veriler toplayabilir.
+
+Toplanabilecek Veriler
+
+Bilgisayar / cihaz ozellikleri (isletim sistemi, donanim, surum bilgisi vb.)
+IP adresi
+MAC adresi
+Tam konum / lokasyon bilgisi (kullanici isletim sistemi izni verdigi surece)
+
+Veri Toplama ve Isleme Amaci
+
+Toplanan veriler yalnizca asagidaki amaclarla islenebilir:
+
+Lisans veya telif hakki ihlallerinin tespiti ve kanitlanmasi,
+Uygulama ve icerik haklarinin korunmasi,
+Yasa disi veya izinsiz kullaniminin sorusturulmasi.
+
+Toplanan hicbir veri reklam, pazarlama, kisiselestirme veya veri satisi amaciyla kullanilmaz.
+Veriler ucuncu taraflarla paylasilmaz;
+yalnizca yasal zorunluluk halinde ve sinirli olcude yetkili mercilere sunulabilir.
+
+Saklama Suresi ve Silme Politikasi
+
+Veriler, ihlal tespiti yapilmadigi surece 6 ay (180 gun) icerisinde otomatik olarak silinir.
+Ihlal tespiti durumunda, ilgili veriler yalnizca kanit niteliginde ve gerekli yasal surec boyunca saklanir.
+Sure doldugunda veriler otomatik ve kalici sekilde silinir.
+
+Riza, Haklar ve Guvenlik
+
+Kullanici, kurulum ekranindaki "Okudum, kabul ediyorum" secenegini isaretleyerek bu kosullari acik rizasiyla kabul eder.
+Riza geri cekildiginde yeni veri toplama durdurulur.
+
+Veriler guvenli kanallarda (ornek: TLS) iletilir ve yalnizca yetkili erisimle goruntulenir.
+MAC adresi gibi dogrudan tanimlayicilar, mumkun oldukca guvenli hashleme (ornek: HMAC-SHA256) yontemiyle saklanir.
+
+Kullanici Haklari (KVKK)
+
+Kullanici, Kisisel Verilerin Korunmasi Kanunu (KVKK) kapsaminda su haklara sahiptir:
+
+Kisisel verilerine erisim talebi,
+Duzeltme veya silme talebi,
+Islemeye itiraz hakki,
+Verilerin tasinmasini talep hakki.
+
+Tum talepler su adresten yapilabilir:
+beratkaccow03@gmail.com
+
+2025 Berat Cankir - YKS ANALIZ TAKIP SISTEMI
+Tum Haklari Saklidir.

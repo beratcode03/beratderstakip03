@@ -1,0 +1,437 @@
+/* BERAT CANKIR */
+/* BERAT BİLAL CANKIR */
+/* CANKIR */
+
+
+/*
+ * BERAT CANKIR - YKS ANALİZ TAKİP SİSTEMİ
+ * @author Berat Cankır
+ * @copyright © 2025 Berat Cankır. Tüm hakları saklıdır.
+ */
+
+/* BERATCANKIR OZEL ANALIZ TAKIP SISTEMI */
+/* BERATCANKIR OZEL ANALIZ TAKIP SISTEMI */
+/* BERATCANKIR OZEL ANALIZ TAKIP SISTEMI */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sayfa kaymasını önle - sürükleme sırasında scroll oluşmasın */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  position: relative;
+}
+
+/* Heatmap bugünkü gün için yumuşak mor parıldama nefes efekti */
+@keyframes purpleGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(147, 51, 234, 0.6), 0 0 16px rgba(147, 51, 234, 0.3);
+    opacity: 0.95;
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(147, 51, 234, 0.9), 0 0 24px rgba(147, 51, 234, 0.5);
+    opacity: 1;
+  }
+}
+
+/* Hafif solunum animasyonu - CPU dostu */
+@keyframes breathingPulse {
+  0%, 100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Hafif solunum animasyonu - CPU dostu */
+@keyframes breathing {
+  0%, 100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Tamamlanmamış görevler için kenarlık yanıp sönmesi */
+@keyframes pulse-border {
+  0%, 100% {
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 0 rgba(139, 92, 246, 0);
+  }
+  50% {
+    border-color: rgba(139, 92, 246, 0.8);
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.3);
+/* BERAT CANKIR */
+  }
+}
+
+/* Reduced motion desteği - erişilebilirlik */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+/* BERAT CANKIR */
+    scroll-behavior: auto !important;
+  }
+}
+
+/* BERAT CANKIR */
+/* Performans optimizasyonları için hafif animasyonlar */
+.animate-breathing-pulse {
+  animation: breathingPulse 3s ease-in-out infinite;
+}
+
+.animate-breathing {
+  animation: breathing 3s ease-in-out infinite;
+}
+
+/* Optimize edilmiş hover efektleri - Hafif */
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Optimize edilmiş buton geçişleri - 165Hz smooth */
+.btn-optimized {
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
+}
+
+.btn-optimized:hover {
+  transform: translateY(-1px) translateZ(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  will-change: transform, box-shadow;
+}
+
+.btn-optimized:active {
+  transform: translateY(0) translateZ(0);
+  transition: transform 0.05s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root {
+  --background: hsl(0 0% 98%);
+  --foreground: hsl(0 0% 20%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 25%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(0 0% 25%);
+  --primary: hsl(271 70% 55%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(240 5% 96%);
+  --secondary-foreground: hsl(0 0% 30%);
+  --muted: hsl(240 5% 94%);
+  --muted-foreground: hsl(0 0% 50%);
+  --accent: hsl(271 60% 95%);
+  --accent-foreground: hsl(0 0% 30%);
+  --destructive: hsl(0 75% 58%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(240 6% 90%);
+  --input: hsl(240 5% 96%);
+  --ring: hsl(271 70% 55%);
+  --chart-1: hsl(203.8863 88.2845% 53.1373%);
+  --chart-2: hsl(159.7826 100% 36.0784%);
+  --chart-3: hsl(42.0290 92.8251% 56.2745%);
+  --chart-4: hsl(147.1429 78.5047% 41.9608%);
+  --chart-5: hsl(341.4894 75.2000% 50.9804%);
+  --sidebar: hsl(0 0% 100%);
+  --sidebar-foreground: hsl(0 0% 15%);
+  --sidebar-primary: hsl(271 76% 53%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(271 76% 96%);
+  --sidebar-accent-foreground: hsl(0 0% 15%);
+/* BERAT CANKIR */
+  --sidebar-border: hsl(240 6% 90%);
+  --sidebar-ring: hsl(271 76% 53%);
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 0.5rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  /* Karanlık Tema - Mor-Beyaz-Siyah */
+  --background: hsl(0 0% 9%);
+  --foreground: hsl(0 0% 100%);
+  --card: hsl(0 0% 12%);
+  --card-foreground: hsl(0 0% 100%);
+  --popover: hsl(0 0% 12%);
+  --popover-foreground: hsl(0 0% 100%);
+  --primary: hsl(271 76% 65%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(0 0% 18%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(0 0% 18%);
+  --muted-foreground: hsl(0 0% 65%);
+  --accent: hsl(271 50% 25%);
+  --accent-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(0 0% 25%);
+  --input: hsl(0 0% 25%);
+  --ring: hsl(271 76% 65%);
+  --chart-1: hsl(203.8863 88.2845% 53.1373%);
+  --chart-2: hsl(159.7826 100% 36.0784%);
+  --chart-3: hsl(42.0290 92.8251% 56.2745%);
+  --chart-4: hsl(147.1429 78.5047% 41.9608%);
+  --chart-5: hsl(341.4894 75.2000% 50.9804%);
+  --sidebar: hsl(0 0% 9%);
+  --sidebar-foreground: hsl(0 0% 100%);
+  --sidebar-primary: hsl(271 76% 65%);
+  --sidebar-primary-foreground: hsl(0 0% 0%);
+  --sidebar-accent: hsl(0 0% 18%);
+  --sidebar-accent-foreground: hsl(0 0% 100%);
+  --sidebar-border: hsl(0 0% 25%);
+  --sidebar-ring: hsl(271 76% 65%);
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 0.5rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+/* BERAT CANKIR */
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Tüm container'ları sınırla */
+  #root {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+}
+
+@layer utilities {
+  /* 165Hz monitör için ultra-smooth task animasyonları */
+  .task-item {
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    backface-visibility: hidden;
+  }
+  
+  .task-item:hover {
+    transform: translateY(-1px) translateZ(0);
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+    will-change: transform, box-shadow;
+  }
+  
+  .dark .task-item:hover {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  /* Hava Durumu Animasyon Efektleri */
+  .rain-animation {
+    background: linear-gradient(transparent 0%, rgba(59, 130, 246, 0.1) 100%);
+    position: relative;
+  }
+
+  .rain-animation::before {
+    content: '';
+/* BERAT CANKIR */
+    position: absolute;
+    width: 100%;
+/* BERAT CANKIR */
+    height: 100%;
+    background-image: 
+      linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+      linear-gradient(180deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: rain-fall 2s linear infinite;
+    opacity: 0.3;
+  }
+
+  .sun-rays-animation {
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.1) 0%, transparent 70%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sun-rays-animation::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(251, 191, 36, 0.1), transparent, rgba(251, 191, 36, 0.05), transparent);
+    animation: sun-rotation 20s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes rain-fall {
+    0% {
+      background-position: 0 -20px;
+    }
+    100% {
+      background-position: 0 20px;
+    }
+  }
+
+  @keyframes sun-rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Kışın kar yağarsa hava durumu için kar animasyonu */
+  .snow-animation {
+    background: linear-gradient(transparent 0%, rgba(219, 234, 254, 0.1) 100%);
+    position: relative;
+  }
+
+  .snow-animation::before {
+    content: '❄️ ❅ ❄️ ❅ ❄️';
+    position: absolute;
+    width: 100%;
+/* BERAT CANKIR */
+    height: 100%;
+    font-size: 1rem;
+    color: rgba(219, 234, 254, 0.5);
+    animation: snow-fall 8s linear infinite;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  @keyframes snow-fall {
+    0% {
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: translateY(100px);
+    }
+  }
+}
+
+/* Modern Purple Scrollbar - 165Hz Optimized */
+/* Webkit tabanlı tarayıcılar için (Chrome, Safari, Edge) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: hsl(248 39% 39% / 0.1);
+  border-radius: 4px;
+  margin: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, hsl(271 76% 53%), hsl(271 76% 45%));
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
+  transition: background 0.15s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, hsl(271 76% 45%), hsl(271 76% 40%));
+  box-shadow: 0 4px 8px rgba(139, 92, 246, 0.4);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(135deg, hsl(271 76% 40%), hsl(271 76% 35%));
+  box-shadow: 0 2px 4px rgba(139, 92, 246, 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Firefox için scrollbar styling */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(271 76% 53%) hsl(248 39% 39% / 0.1);
+}
+
+/* Global scrollbar - 165Hz ready, buttery smooth */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(271 76% 53%) hsl(248 39% 39% / 0.1);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: hsl(248 39% 39% / 0.1);
+  border-radius: 4px;
+  margin: 2px;
+}
+/* BERAT CANKIR */
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, hsl(271 76% 53%), hsl(271 76% 45%));
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(139, 92, 246, 0.3);
+  transition: background 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, hsl(271 76% 45%), hsl(271 76% 40%));
+  box-shadow: 0 4px 8px rgba(139, 92, 246, 0.4);
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(135deg, hsl(271 76% 40%), hsl(271 76% 35%));
+  box-shadow: 0 2px 4px rgba(139, 92, 246, 0.5);
+}
+
+*::-webkit-scrollbar-corner {
+/* BERAT CANKIR */
+  background: transparent;
+}
+
+
+/* BERAT CANKIR */
+/* BERAT BİLAL CANKIR */
+/* CANKIR */

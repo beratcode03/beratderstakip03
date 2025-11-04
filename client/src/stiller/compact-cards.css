@@ -1,0 +1,28 @@
+/* BERAT CANKIR */
+/* BERAT BİLAL CANKIR */
+/* CANKIR */
+
+
+
+/* Kompakt sınav kartı stilleri */
+.compact-exam-card {
+  min-height: 120px;
+  max-width: 180px;
+}
+
+.compact-exam-card:hover {
+  transform: scale(1.02);
+  transition: all 0.2s ease;
+}
+
+/* Kompakt kartlarda metin taşmasını önle */
+.compact-exam-card .truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* BERAT CANKIR */
+/* BERAT BİLAL CANKIR */
+/* CANKIR */

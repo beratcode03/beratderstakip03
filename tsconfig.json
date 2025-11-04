@@ -1,0 +1,39 @@
+{
+  "include": ["client/src/**/*", "shared/**/*", "server/**/*"],
+  "exclude": ["node_modules", "build", "dist", "**/*.test.ts"],
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "./node_modules/typescript/tsbuildinfo",
+    "noEmit": true,
+    "module": "ESNext",
+    "target": "ES2022",
+    "strict": false,
+    "lib": ["ES2022", "dom", "dom.iterable"],
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "types": ["node"],
+    "typeRoots": ["./node_modules/@types"],
+    "paths": {
+      "@/*": ["./client/src/*"],
+      "@bilesenler/*": ["./client/src/bilesenler/*"],
+      "@arayuz/*": ["./client/src/bilesenler/arayuz/*"],
+      "@sayfalar/*": ["./client/src/sayfalar/*"],
+      "@hooks/*": ["./client/src/hooks/*"],
+      "@kutuphane/*": ["./client/src/kutuphane/*"],
+      "@stiller/*": ["./client/src/stiller/*"],
+      "@shared/*": ["./shared/*"],
+      "@assets/*": ["./attached_assets/*"]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
